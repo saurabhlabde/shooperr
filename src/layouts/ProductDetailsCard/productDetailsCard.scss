@@ -142,6 +142,7 @@
 
 @media screen and(min-width: 1100px) {
   .product-d-card {
+    max-width: 50%;
     & .pdc-product-description-section {
       max-width: 70%;
     }

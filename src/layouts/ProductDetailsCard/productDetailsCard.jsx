@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import ReactStars from "react-rating-stars-component";
 import { StarIcon, BackIcon } from "../../icons/index";
 
-const ProductDetailsCard = () => {
+const ProductDetailsCard = ({ props }) => {
   const [rating, setRating] = useState(0);
 
   const ratingChanged = () => {};
@@ -23,8 +23,8 @@ const ProductDetailsCard = () => {
         <div className="pdc-media-section">
           <img
             className="pdc-image"
-            src="https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-            alt="Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+            src={`${props?.image}`}
+            alt={`${props?.title}`}
           />
         </div>
       </div>
@@ -32,14 +32,14 @@ const ProductDetailsCard = () => {
       <div className="pdc-b-section">
         <div className="pdc-product-name-section">
           <h1 className="pdc-product-name">
-            <span>Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops</span>
+            <span>{props?.title}</span>
           </h1>
         </div>
 
         <div className="pdc-price-rating-section">
           <div className="pdc-product-price-section">
             <h1 className="pdc-product-price">
-              <span>$109.95</span>
+              <span>₹ {props?.price * 76}</span>
             </h1>
           </div>
 
@@ -50,7 +50,9 @@ const ProductDetailsCard = () => {
 
             <div className="pdc-product-rating-section">
               <h1 className="pc-product-rating">
-                <span>3.9 (120)</span>
+                <span>
+                  {props?.rating?.rate} ({props?.rating?.count})
+                </span>
               </h1>
             </div>
           </div>
@@ -67,16 +69,13 @@ const ProductDetailsCard = () => {
 
         <div className="pdc-product-description-section">
           <h1 className="pc-product-description">
-            <span>
-              Your perfect pack for everyday use and walks in the forest. Stash
-              your laptop (up to 15 inches) in the padded sleeve, your everyday
-            </span>
+            <span>{props?.description}</span>
           </h1>
         </div>
 
         <div className="pdc-product-category-section">
           <h1 className="pc-product-category">
-            <span>men's clothing</span>
+            <span>{props?.category}</span>
           </h1>
         </div>
       </div>
