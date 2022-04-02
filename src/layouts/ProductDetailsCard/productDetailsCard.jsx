@@ -1,14 +1,23 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import ReactStars from "react-rating-stars-component";
-import { StarIcon } from "../../icons/index";
+import { StarIcon, BackIcon } from "../../icons/index";
 
 const ProductDetailsCard = () => {
   const [rating, setRating] = useState(0);
 
   const ratingChanged = () => {};
+
+  const router = useRouter();
+
+  const backHandel = () => {
+    return router.back();
+  };
   return (
     <div className="product-d-card">
-      <div className="back-button"></div>
+      <div className="back-button" onClick={backHandel}>
+        <BackIcon />
+      </div>
 
       <div className="pdc-t-section">
         <div className="pdc-media-section">

@@ -1,6 +1,13 @@
+import { useRouter } from "next/router";
 import { Button } from "../../components/index";
 
 const ProductCard = () => {
+  const router = useRouter();
+
+  const redirectHandel = () => {
+    return router.push("/1");
+  };
+
   return (
     <div className="product-card">
       <div className="pc-t-section">
@@ -26,7 +33,7 @@ const ProductCard = () => {
         </div>
 
         <div className="pc-product-button-section">
-          <Button label={"MORE DETAILS"} onClick={() => {}} />
+          <Button label={"MORE DETAILS"} onClick={redirectHandel} />
         </div>
       </div>
     </div>

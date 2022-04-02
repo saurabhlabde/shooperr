@@ -9,6 +9,9 @@
   cursor: pointer;
 
   & .button-label {
+    cursor: pointer;
+    user-select: none;
+
     & .button-text {
       font-family: "PlusJakartaSans-Bold";
       font-size: 15px;

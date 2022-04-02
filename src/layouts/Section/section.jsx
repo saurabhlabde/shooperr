@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-import { Navbar } from "../Navbar/index";
+import { Navbar, Footer } from "../index";
 
 const Section = ({ title, component }) => {
   return (
@@ -17,6 +17,8 @@ const Section = ({ title, component }) => {
         </div>
 
         <div>{component}</div>
+
+        <Footer />
       </main>
     </div>
   );
