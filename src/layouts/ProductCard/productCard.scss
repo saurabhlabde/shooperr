@@ -4,10 +4,12 @@
   height: auto;
   background-color: #ffffff;
   margin: 10px;
+  height: 550px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
 
   & .pc-t-section {
     & .pc-media-section {
@@ -19,13 +21,17 @@
   }
 
   & .pc-b-section {
+    width: 100%;
     & .pc-product-name-section {
       margin-top: 30px;
       & .pc-product-name {
-        font-family: "PlusJakartaSans-Bold";
+        font-family: "PlusJakartaSans-Medium";
         font-size: 15px;
         color: #000000;
         text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
     }
 
@@ -33,7 +39,7 @@
       margin-top: 20px;
 
       & .pc-product-price {
-        font-family: "PlusJakartaSans-Bold";
+        font-family: "PlusJakartaSans-Medium";
         font-size: 15px;
         color: #646161;
         text-align: center;

@@ -1,13 +1,13 @@
 import { Section } from "../../layouts/Section/index";
-
 import { ProductCard } from "../../layouts/ProductCard/index";
+import { Spinner } from "../../layouts/Spinner/index";
 
 import { HomeHook } from "./home.hook";
 
 const HomeScreen = () => {
   const { isLoading, productsData } = HomeHook();
 
-  if (isLoading) return <h1>Loading...</h1>;
+  if (isLoading) return <Spinner />;
 
   return (
     <Section
