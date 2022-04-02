@@ -62,8 +62,8 @@ const ProductDetailsCard = ({ props }) => {
             <div className="pdc-product-rating-section">
               <h1 className="pc-product-rating">
                 <span>
-                  {props?.rating?.rate} ({props?.rating?.count + default_rating}
-                  )
+                  {Math.floor(props?.rating?.rate + Math.random())} (
+                  {props?.rating?.count + default_rating})
                 </span>
               </h1>
             </div>

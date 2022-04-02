@@ -16,6 +16,7 @@
       & .pc-image {
         height: 315px;
         width: 100%;
+        object-fit: contain;
       }
     }
   }
