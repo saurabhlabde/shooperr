@@ -19,7 +19,7 @@ const ProductCard = ({ props }) => {
             src={`${props?.image}`}
             alt={`${props?.title}`}
             height={315}
-            width={"100%"}
+            width={250}
             loading="eager"
           />
         </div>

@@ -37,7 +37,7 @@ const ProductDetailsCard = ({ props }) => {
             src={`${props?.image}`}
             alt={`${props?.title}`}
             height={315}
-            width={315}
+            width={250}
             loading="eager"
           />
         </div>
