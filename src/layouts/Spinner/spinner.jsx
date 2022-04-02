@@ -1,4 +1,4 @@
-import HashLoader from "react-spinners/ClipLoader";
+import HashLoader from "react-spinners/HashLoader";
 
 const Spinner = () => {
   return (

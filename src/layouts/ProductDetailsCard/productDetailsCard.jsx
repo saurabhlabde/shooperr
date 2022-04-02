@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { useRouter } from "next/router";
 import { useSelector, useDispatch } from "react-redux";
 import ReactStars from "react-rating-stars-component";
+import Image from "next/image";
 
 import { BackIcon } from "../../icons/BackIcon/index";
 import { StarIcon } from "../../icons/StarIcon/index";
@@ -32,10 +32,13 @@ const ProductDetailsCard = ({ props }) => {
 
       <div className="pdc-t-section">
         <div className="pdc-media-section">
-          <img
+          <Image
             className="pdc-image"
             src={`${props?.image}`}
             alt={`${props?.title}`}
+            height={315}
+            width={315}
+            loading="eager"
           />
         </div>
       </div>

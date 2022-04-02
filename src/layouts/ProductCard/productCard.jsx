@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
+
 import { Button } from "../../components/Button/index";
 
 const ProductCard = ({ props }) => {
@@ -12,10 +14,13 @@ const ProductCard = ({ props }) => {
     <div className="product-card">
       <div className="pc-t-section">
         <div className="pc-media-section">
-          <img
+          <Image
             className="pc-image"
             src={`${props?.image}`}
             alt={`${props?.title}`}
+            height={315}
+            width={"100%"}
+            loading="eager"
           />
         </div>
       </div>
