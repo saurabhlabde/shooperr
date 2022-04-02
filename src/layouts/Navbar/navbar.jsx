@@ -1,7 +1,11 @@
+import { Logo } from "../../components/Logo/index";
+
 const Navbar = () => {
   return (
-    <div>
-      <div></div>
+    <div className="navbar">
+      <div className="logo-section">
+        <Logo />
+      </div>
     </div>
   );
 };

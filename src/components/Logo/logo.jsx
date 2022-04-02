@@ -1,12 +1,17 @@
+import { LogoIcon } from "../../icons/index";
+
 const Logo = () => {
   return (
-    <div>
-      <div>
-        <div></div>
+    <div className="logo">
+      <div className="logo-l-section">
+        <div className="logo-icon-section">
+          <LogoIcon />
+        </div>
       </div>
-      <div>
-        <div>
-          <h1>
+
+      <div className="logo-r-section">
+        <div className="logo-n-section">
+          <h1 className="logo-text">
             <span>Shooperr</span>
           </h1>
         </div>

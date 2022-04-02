@@ -1,0 +1,29 @@
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  & .logo-l-section {
+    & .logo-icon-section {
+      height: 50px;
+      width: 50px;
+      border-radius: 100px;
+      background-color: #000000;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  & .logo-r-section {
+    margin-left: 15px;
+    
+    & .logo-n-section {
+      & .logo-text {
+        font-family: "PlusJakartaSans-Bold";
+        font-size: 22px;
+      }
+    }
+  }
+}

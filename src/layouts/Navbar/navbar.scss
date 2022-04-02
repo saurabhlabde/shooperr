@@ -1,0 +1,23 @@
+.navbar {
+  height: auto;
+  width: 100%;
+  padding: 25px 70px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  & .logo-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media screen and(min-width: 850px) {
+  .navbar {
+    justify-content: flex-start;
+  }
+}

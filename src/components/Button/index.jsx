@@ -1,1 +1,1 @@
-export { default as Logo } from "./button";
+export { default as Button } from "./button";

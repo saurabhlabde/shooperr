@@ -1,0 +1,118 @@
+.product-d-card {
+  background-color: #ffffff;
+  padding: 100px;
+  height: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .back-button {
+  }
+
+  & .pdc-t-section {
+    & .pdc-media-section {
+      & .pdc-image {
+        height: 315px;
+        width: 315px;
+      }
+    }
+  }
+
+  & .pdc-b-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .pdc-product-name-section {
+      margin-top: 50px;
+
+      & .pdc-product-name {
+        font-family: "PlusJakartaSans-Bold";
+        font-size: 20px;
+        color: #000000;
+        text-align: center;
+      }
+    }
+
+    & .pdc-price-rating-section {
+      margin-top: 30px;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & .pdc-product-price-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & .pdc-product-price {
+          font-family: "PlusJakartaSans-Bold";
+          font-size: 20px;
+          color: #646161;
+          text-align: center;
+        }
+      }
+
+      & .pdc-rating-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: 25px;
+
+        & .pdc-rating-icon {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+        }
+
+        & .pdc-product-rating-section {
+          margin-left: 10px;
+          & .pc-product-rating {
+            font-family: "PlusJakartaSans-Bold";
+            font-size: 20px;
+            color: #646161;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+    & .pdc-product-user-rating-section {
+      margin-top: 30px;
+    }
+
+    & .pdc-product-description-section {
+      margin-top: 50px;
+
+      & .pc-product-description {
+        font-family: "PlusJakartaSans-Bold";
+        font-size: 17px;
+        color: #646161;
+        text-align: center;
+      }
+    }
+
+    & .pdc-product-category-section {
+      padding: 10px 50px;
+      border-radius: 100px;
+      margin-top: 50px;
+      background-color: #fef9f9;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & .pc-product-category {
+        font-family: "PlusJakartaSans-SemiBold";
+        font-size: 17px;
+        color: #646161;
+        text-align: center;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

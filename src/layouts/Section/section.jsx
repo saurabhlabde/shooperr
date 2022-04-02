@@ -1,13 +1,23 @@
-const Section = () => {
+import Head from "next/head";
+
+import { Navbar } from "../Navbar/index";
+
+const Section = ({ title, component }) => {
   return (
-    <div>
+    <div className="container">
       <Head>
-        <title>Home | Shooperr</title>
+        <title>{title ? `${title} | Shooperr` : "Shooperr"} </title>
         <meta name="description" content="Shooperr" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main></main>
+      <main className="main">
+        <div>
+          <Navbar />
+        </div>
+
+        <div>{component}</div>
+      </main>
     </div>
   );
 };
