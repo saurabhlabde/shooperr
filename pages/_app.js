@@ -1,5 +1,7 @@
 import "../styles/globals.scss";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Provider } from "react-redux";
+import { store } from "../src/state/store";
 
 const queryClientConfig = {
   defaultOptions: {
@@ -24,9 +26,11 @@ const queryClient = new QueryClient(queryClientConfig);
 
 function MyApp({ Component, pageProps }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Component {...pageProps} />;
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <Component {...pageProps} />;
+      </QueryClientProvider>
+    </Provider>
   );
 }
 

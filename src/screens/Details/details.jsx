@@ -1,3 +1,5 @@
+import React from "react";
+
 import { Section } from "../../layouts/Section/index";
 import { ProductDetailsCard } from "../../layouts/ProductDetailsCard/index";
 import { Spinner } from "../../layouts/Spinner/index";

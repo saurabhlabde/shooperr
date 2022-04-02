@@ -15,8 +15,6 @@ const DetailsHook = () => {
     isLoading: product_loading,
   } = useProduct({ key: +router?.query?.id });
 
-  console.log(data, "data");
-
   useEffect(() => {
     const loading = product_loading;
 

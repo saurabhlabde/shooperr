@@ -1,20 +1,29 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import { useSelector, useDispatch } from "react-redux";
 import ReactStars from "react-rating-stars-component";
 
 import { BackIcon } from "../../icons/BackIcon/index";
 import { StarIcon } from "../../icons/StarIcon/index";
 
+import { setRating } from "../../state/rating";
+
 const ProductDetailsCard = ({ props }) => {
-  const [rating, setRating] = useState(0);
-
-  const ratingChanged = () => {};
-
   const router = useRouter();
+  const dispatch = useDispatch();
+
+  const default_rating = useSelector((state) => state.rating.value);
+
+  const ratingChanged = () => {
+    if (default_rating <= 0) {
+      return dispatch(setRating(1));
+    }
+  };
 
   const backHandel = () => {
     return router.back();
   };
+
   return (
     <div className="product-d-card">
       <div className="back-button" onClick={backHandel}>
@@ -53,7 +62,8 @@ const ProductDetailsCard = ({ props }) => {
             <div className="pdc-product-rating-section">
               <h1 className="pc-product-rating">
                 <span>
-                  {props?.rating?.rate} ({props?.rating?.count})
+                  {props?.rating?.rate} ({props?.rating?.count + default_rating}
+                  )
                 </span>
               </h1>
             </div>
