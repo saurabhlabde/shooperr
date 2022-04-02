@@ -3,6 +3,8 @@ import Head from "next/head";
 import { Navbar } from "../Navbar/index";
 import { Footer } from "../Footer/index";
 
+import { Alert } from "../../components/Alert/index";
+
 const Section = ({ title, component }) => {
   return (
     <div className="container">
@@ -20,6 +22,8 @@ const Section = ({ title, component }) => {
         <div>{component}</div>
 
         <Footer />
+
+        <Alert />
       </main>
     </div>
   );

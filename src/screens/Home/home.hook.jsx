@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import { useProducts } from "./home.api";
 
@@ -13,6 +14,12 @@ const HomeHook = () => {
 
     setIsLoading(loading);
   }, [products_loading]);
+
+  useEffect(() => {
+    if (error) {
+      toast.error("Something went wrong!");
+    }
+  }, [error]);
 
   useEffect(() => {
     if (data) {

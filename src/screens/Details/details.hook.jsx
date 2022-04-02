@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 import { useProduct } from "./details.api";
 
@@ -20,6 +21,12 @@ const DetailsHook = () => {
 
     setIsLoading(loading);
   }, [product_loading]);
+
+  useEffect(() => {
+    if (error) {
+      toast.error("Something went wrong!");
+    }
+  }, [error]);
 
   useEffect(() => {
     if (data) {
