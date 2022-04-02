@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import ReactStars from "react-rating-stars-component";
-import { StarIcon, BackIcon } from "../../icons/index";
+
+import { BackIcon } from "../../icons/BackIcon/index";
+import { StarIcon } from "../../icons/StarIcon/index";
 
 const ProductDetailsCard = ({ props }) => {
   const [rating, setRating] = useState(0);

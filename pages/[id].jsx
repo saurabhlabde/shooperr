@@ -1,4 +1,4 @@
-import { DetailsScreen } from "../src/screens/index";
+import { DetailsScreen } from "../src/screens/Details/index";
 
 const Details = () => {
   return <DetailsScreen />;

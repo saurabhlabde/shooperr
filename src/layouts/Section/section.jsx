@@ -1,6 +1,7 @@
 import Head from "next/head";
 
-import { Navbar, Footer } from "../index";
+import { Navbar } from "../Navbar/index";
+import { Footer } from "../Footer/index";
 
 const Section = ({ title, component }) => {
   return (

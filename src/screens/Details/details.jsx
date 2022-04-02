@@ -1,4 +1,4 @@
-import { Section } from "../../layouts/index";
+import { Section } from "../../layouts/Section/index";
 
 import { ProductDetailsCard } from "../../layouts/ProductDetailsCard/index";
 
