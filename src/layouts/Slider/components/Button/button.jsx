@@ -11,12 +11,18 @@ const SliderButton = ({ props, slideIndex, index }) => {
     [buttonAnimation]
   );
 
+  useEffect(() => {
+    if (slideIndex === 0) {
+      clickHandel();
+    }
+  }, [slideIndex]);
+
   const clickHandel = () => {
     setActive(true);
 
     setTimeout(() => {
       setActive(false);
-    }, 1000);
+    }, 50);
   };
 
   return (

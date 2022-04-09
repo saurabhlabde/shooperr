@@ -1,4 +1,6 @@
 .image-slider-container {
+  margin-top: 200px;
+
   & .is-t-section {
     & .image-slider-lib {
       background: #ffffff;
@@ -9,25 +11,34 @@
     }
   }
 
-  & .slick-dots {
+  & .slick-arrow {
+    display: none !important;
+  }
+
+  & .is-t-section {
     position: relative;
-    margin-top: 40px;
 
-    display: flex !important;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    & .slick-dots {
+      position: absolute;
+      top: -750px;
+      left: 0;
 
-    & li {
-      margin: 0px;
-      width: max-content;
+      display: flex !important;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
 
-      & .s-btn-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
+      & li {
+        margin: 0px;
+        width: max-content;
+
+        & .s-btn-section {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: row;
+        }
       }
     }
   }
