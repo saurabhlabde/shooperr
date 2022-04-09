@@ -4,14 +4,25 @@
   border-radius: 100px;
   padding: 5px 50px 5px 5px;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 
   & .sb-background-active {
+    height: 100%;
+    width: 0%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   & .sb-section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    z-index: 1;
+    position: relative;
+    pointer-events: none;
 
     & .sb-image-section {
       height: 40px;

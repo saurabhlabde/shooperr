@@ -16,12 +16,20 @@ const ImageSlider = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    cssEase: "linear",
     dotsClass: "slick-dots slick-thumb",
     beforeChange: (current, next) => setSlideIndex(next),
     customPaging: function (i) {
       return (
         <div className="s-btn-section">
-          <SliderButton key={`sb-${i}`} props={sliderData[i]} />
+          <SliderButton
+            key={`sb-${i}`}
+            props={sliderData[i]}
+            slideIndex={slideIndex}
+            index={i}
+          />
           {i + 1 < sliderData.length && <SliderLine />}
         </div>
       );
@@ -35,7 +43,7 @@ const ImageSlider = () => {
           {...settings}
           className="image-slider-lib"
           style={{
-            backgroundColor: sliderData[slideIndex]?.background ?? "#d73347",
+            backgroundColor: sliderData[slideIndex]?.background ?? "#ffffff",
           }}
         >
           {sliderData.map((item) => {
