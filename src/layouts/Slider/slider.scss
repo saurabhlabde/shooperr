@@ -9,14 +9,26 @@
     }
   }
 
-  & .is-b-section {
-    margin-top: 60px;
-    width: 86%;
-    margin-left: 7%;
+  & .slick-dots {
+    position: relative;
+    margin-top: 40px;
 
-    display: flex;
+    display: flex !important;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    width: 100%;
+
+    & li {
+      margin: 0px;
+      width: max-content;
+
+      & .s-btn-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+    }
   }
 }

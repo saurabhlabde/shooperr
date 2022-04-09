@@ -24,7 +24,7 @@ const Section = ({ title, component }) => {
           <ImageSlider />
         </div>
 
-        <div>{component}</div>
+        <div className="h-cards-section">{component}</div>
 
         <Footer />
 

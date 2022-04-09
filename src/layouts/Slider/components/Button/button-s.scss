@@ -1,9 +1,8 @@
 .slider-button-section {
   height: 50px;
-  width: 200px;
+  width: auto;
   border-radius: 100px;
-  padding: 5px;
-  background-color: #313131;
+  padding: 5px 50px 5px 5px;
   cursor: pointer;
 
   & .sb-background-active {
@@ -23,7 +22,7 @@
       & .sb-image {
         height: 100%;
         width: 100%;
-        object-fit: contain;
+        object-fit: cover;
       }
     }
 
@@ -34,6 +33,7 @@
         font-size: 15px;
         font-family: "PlusJakartaSans-Regular";
         color: #ffffff;
+        text-transform: capitalize;
       }
     }
   }
