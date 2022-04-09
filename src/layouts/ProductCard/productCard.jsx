@@ -20,7 +20,7 @@ const ProductCard = ({ props }) => {
             alt={`${props?.title}`}
             height={315}
             width={250}
-            loading="eager"
+            loading="lazy"
           />
         </div>
       </div>

@@ -6,6 +6,10 @@
 @use "../src/layouts/Section/section.scss";
 @use "../src/layouts/Spinner/spinner.scss";
 @use "../src/layouts/Footer/footer.scss";
+@use "../src/layouts/Slider/slider.scss";
+@use "../src/layouts/Slider/components/Image/image.scss";
+@use "../src/layouts/Slider/components/Button/button-s.scss";
+@use "../src/layouts/Slider/components/Line/line.scss";
 @use "../src/screens/Home/home.scss";
 @use "../src/screens/Details/details.scss";
 

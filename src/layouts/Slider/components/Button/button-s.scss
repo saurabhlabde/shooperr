@@ -1,0 +1,40 @@
+.slider-button-section {
+  height: 50px;
+  width: 200px;
+  border-radius: 100px;
+  padding: 5px;
+  background-color: #313131;
+  cursor: pointer;
+
+  & .sb-background-active {
+  }
+
+  & .sb-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & .sb-image-section {
+      height: 40px;
+      width: 40px;
+      border-radius: 100px;
+      overflow: hidden;
+
+      & .sb-image {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+      }
+    }
+
+    & .sb-heading-section {
+      margin-left: 15px;
+
+      & .sb-heading {
+        font-size: 15px;
+        font-family: "PlusJakartaSans-Regular";
+        color: #ffffff;
+      }
+    }
+  }
+}

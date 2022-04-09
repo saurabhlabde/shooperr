@@ -2,6 +2,7 @@ import Head from "next/head";
 
 import { Navbar } from "../Navbar/index";
 import { Footer } from "../Footer/index";
+import { ImageSlider } from "../Slider/index";
 
 import { Alert } from "../../components/Alert/index";
 
@@ -17,6 +18,10 @@ const Section = ({ title, component }) => {
       <main className="main">
         <div>
           <Navbar />
+        </div>
+
+        <div className="h-image-slider-section">
+          <ImageSlider />
         </div>
 
         <div>{component}</div>

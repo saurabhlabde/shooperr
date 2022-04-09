@@ -5,5 +5,9 @@
     background-color: #fef9f9;
     overflow: hidden;
     overflow-y: scroll;
+
+    & .h-image-slider-section {
+      margin-top: 50px;
+    }
   }
 }
