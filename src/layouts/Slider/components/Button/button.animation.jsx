@@ -9,7 +9,8 @@ const buttonAnimation = ({ slideIndex, index }) => {
       animationButton.start({
         width: "100%",
         transition: {
-          duration: 0.05,
+          duration: 0,
+          ease: "easeIn",
         },
       });
     } else if (index < slideIndex) {

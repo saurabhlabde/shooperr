@@ -1,6 +1,6 @@
 .slider-button-section {
   height: 50px;
-  width: auto;
+  width: 200px !important;
   border-radius: 100px;
   padding: 5px 50px 5px 5px;
   cursor: pointer;
@@ -60,7 +60,7 @@
 @media screen and(min-width: 0px) and (max-width: 600px) {
   .slider-button-section {
     height: 35px;
-    width: auto;
+    width: 200px !important;
     border-radius: 100px;
     padding: 2px 30px 2px 7px;
     cursor: pointer;
@@ -90,18 +90,18 @@
 
 @media screen and(min-width: 600px) and (max-width: 1000px) {
   .slider-button-section {
-    height: 35px;
-    width: auto;
+    height: 40px;
+    width: 175px !important;
     border-radius: 100px;
-    padding: 2px 30px 2px 7px;
+    padding: 4px 30px 4px 7px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
 
     & .sb-section {
       & .sb-image-section {
-        height: 20px;
-        width: 20px;
+        height: 25px;
+        width: 25px;
       }
 
       & .sb-heading-section {
@@ -122,7 +122,7 @@
 @media screen and(min-width: 1200px) and (max-width: 1400px) {
   .slider-button-section {
     height: 40px;
-    width: auto;
+    width: 200px !important;
     border-radius: 100px;
     padding: 4px 30px 4px 7px;
     cursor: pointer;
