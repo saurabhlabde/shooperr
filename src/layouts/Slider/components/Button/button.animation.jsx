@@ -1,4 +1,4 @@
-import { useAnimation } from "framer-motion";
+import { useAnimation, useMotionValue } from "framer-motion";
 import { useEffect } from "react";
 
 const buttonAnimation = ({ slideIndex, index }) => {

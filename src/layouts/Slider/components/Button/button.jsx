@@ -4,24 +4,37 @@ import { useEffect, useMemo, useState } from "react";
 import { buttonAnimation } from "./button.animation";
 
 const SliderButton = ({ props, slideIndex, index, scrollPosition }) => {
-  useEffect(() => {
-    if (scrollPosition >= 400) {
-      return animationButton.stop;
-    }
-    // else if (scrollPosition <= 399) {
-    //   return animationButton.start({
-    //     width: "50%",
-    //     transition: {
-    //       duration: 2.5,
-    //     },
-    //   });
-    // }
-  }, [scrollPosition]);
-
   const { animationButton, restartAnimation } = buttonAnimation({
     slideIndex,
     index,
   });
+
+  useEffect(() => {
+    if (scrollPosition >= 400) {
+      return animationButton.stop;
+    } else {
+      const buttonWidth = document.getElementById(
+        `sb-background-active-${index}`
+      );
+
+      if (index === slideIndex) {
+        animationButton.start({
+          width: [
+            `${
+              buttonWidth.style.width !== "" ? buttonWidth.style.width : "0%"
+            }`,
+            "100%",
+          ],
+          transition: {
+            duration: 4,
+            ease: "easeIn",
+          },
+        });
+
+        console.log(buttonWidth.style.width, "buttonWidth.style.width");
+      }
+    }
+  }, [scrollPosition]);
 
   return (
     <div
