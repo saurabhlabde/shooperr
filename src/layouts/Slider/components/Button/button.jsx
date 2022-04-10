@@ -26,8 +26,7 @@ const SliderButton = ({ props, slideIndex, index, scrollPosition }) => {
             "100%",
           ],
           transition: {
-            duration: 4,
-            ease: "easeIn",
+            duration: 5,
           },
         });
 
