@@ -1,12 +1,10 @@
 .accordion-card {
-  background-color: #fefffe;
-  //   border-bottom: solid;
-  border: solid;
-  border-color: #f9d177;
+  background-color: transparent;
+  border-bottom: solid;
+  border-color: #eae3e3;
   border-width: 2.5px;
-  width: 700px;
-  border-radius: 10px;
-  margin: 5px 0;
+  width: 600px;
+  border-radius: 0px;
   padding: 0 15px;
 
   & :hover {
@@ -39,8 +37,8 @@
   }
 
   & .accordion__panel {
-          padding: 0px 20px 20px 40px !important;
-          margin-top: -20px;
+    padding: 0px 20px 20px 40px !important;
+    margin-top: -20px;
   }
 
   & .ac-content-section {
@@ -54,4 +52,12 @@
   & .accordion__button:before {
     display: none !important;
   }
+}
+
+.accordion-card-active {
+  border: solid !important;
+  border-color: #f9d177 !important;
+  border-radius: 10px !important;
+  background-color: #fefffe !important;
+  border-width: 2.5px !important;
 }

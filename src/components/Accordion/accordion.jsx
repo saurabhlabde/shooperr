@@ -1,15 +1,26 @@
+import { useState } from "react";
 import {
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
   AccordionItemPanel,
+  AccordionItemState,
 } from "react-accessible-accordion";
 
 const AccordionCard = ({ props }) => {
+  const [active, setActive] = useState(false);
+
   return (
-    <AccordionItem key={`${props.id}`} className="accordion-card">
+    <AccordionItem
+      key={`${props.id}`}
+      className={`accordion-card ${active && "accordion-card-active"}`}
+    >
       <AccordionItemHeading>
         <AccordionItemButton>
+          <AccordionItemState>
+            {({ expanded }) => (expanded ? setActive(true) : setActive(false))}
+          </AccordionItemState>
+
           <div className="ac-icon-section">
             <img className="ac-icon" src={props.icon} />
           </div>

@@ -10,7 +10,7 @@ const Faq = () => {
     <div className="faq-section">
       <div className="faq-l-section">
         <div className="faq-heading-section">
-          <h1>
+          <h1 className="faq-heading">
             <span>FAQ</span>
           </h1>
         </div>
@@ -25,7 +25,16 @@ const Faq = () => {
       </div>
 
       <div className="faq-r-section">
-        <div className="faq-a-image-section">{/* <Image /> */}</div>
+        <div className="faq-a-image-section">
+          <Image
+            className="faq-a-image"
+            src={faqData[0].image}
+            loading="lazy"
+            height={700}
+            width={500}
+            layout="fixed"
+          />
+        </div>
       </div>
     </div>
   );
