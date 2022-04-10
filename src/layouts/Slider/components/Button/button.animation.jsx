@@ -1,32 +1,69 @@
-import { useMotionValue } from "framer-motion";
+import { useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
-const buttonAnimation = ({ slideIndex }) => {
-  const buttonVariants = {
-    hidden: {
-      width: `0%`,
-    },
-    show: {
-      width: `100%`,
-      transition: {
-        duration: 5,
-      },
-    },
-    fill: {
-      width: `100%`,
-      transition: {
-        duration: 0.5,
-      },
-    },
-    reset: {
-      width: "0%",
-      transition: {
-        duration: 0.05,
-      },
-    },
+const buttonAnimation = ({ slideIndex, index }) => {
+  const animationButton = useAnimation();
+
+  useEffect(() => {
+    if (index < slideIndex) {
+      animationButton.start({
+        width: "100%",
+        transition: {
+          duration: 5,
+        },
+      });
+    } else if (index > slideIndex) {
+      animationButton.start({
+        width: "0%",
+        transition: {
+          duration: 0.1,
+        },
+      });
+    } else if (slideIndex === 0) {
+      animationButton
+        .start({
+          width: "0%",
+          transition: {
+            duration: 0.5,
+          },
+        })
+        .then(() => {
+          animationButton.start({
+            width: "100%",
+            transition: {
+              duration: 5,
+            },
+          });
+        });
+    } else {
+      animationButton.start({
+        width: "100%",
+        transition: {
+          duration: 5,
+        },
+      });
+    }
+  }, [slideIndex]);
+
+  const restartAnimation = () => {
+    animationButton
+      .start({
+        width: "0%",
+        transition: {
+          duration: 0.5,
+        },
+      })
+      .then(() => {
+        animationButton.start({
+          width: "100%",
+          transition: {
+            duration: 5,
+          },
+        });
+      });
   };
 
-  return { buttonVariants };
+  return { animationButton, restartAnimation };
 };
 
 export { buttonAnimation };

@@ -10,22 +10,28 @@ const HomeHook = () => {
   const { data, error, isLoading: products_loading } = useProducts();
 
   useEffect(() => {
-    const loading = products_loading;
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
 
-    setIsLoading(loading);
-  }, [products_loading]);
+  // useEffect(() => {
+  //   const loading = products_loading;
 
-  useEffect(() => {
-    if (error) {
-      toast.error("Something went wrong!");
-    }
-  }, [error]);
+  //   setIsLoading(loading);
+  // }, [products_loading]);
 
-  useEffect(() => {
-    if (data) {
-      setProductsData(data);
-    }
-  }, [data]);
+  // useEffect(() => {
+  //   if (error) {
+  //     toast.error("Something went wrong!");
+  //   }
+  // }, [error]);
+
+  // useEffect(() => {
+  //   if (data) {
+  //     setProductsData(data);
+  //   }
+  // }, [data]);
 
   return { isLoading, productsData };
 };

@@ -8,7 +8,6 @@
   & .slider-image-section {
     height: 450px;
     width: 97%;
-    background-color: red;
     border-radius: 52px;
     overflow: hidden;
 
@@ -16,6 +15,39 @@
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+  }
+}
+
+@media screen and(min-width: 0px) and (max-width: 600px) {
+  .slider-image-bg-section {
+    height: 300px;
+
+    & .slider-image-section {
+      height: 270px;
+      width: 90%;
+    }
+  }
+}
+
+@media screen and(min-width: 600px) and (max-width: 1000px) {
+  .slider-image-bg-section {
+    height: 300px;
+
+    & .slider-image-section {
+      height: 270px;
+      width: 95%;
+    }
+  }
+}
+
+@media screen and(min-width: 1000px) and (max-width: 1200px) {
+  .slider-image-bg-section {
+    height: 350px;
+
+    & .slider-image-section {
+      height: 320px;
+      width: 96%;
     }
   }
 }

@@ -3,6 +3,7 @@ import { ProductCard } from "../../layouts/ProductCard/index";
 import { Spinner } from "../../layouts/Spinner/index";
 
 import { HomeHook } from "./home.hook";
+import { useEffect } from "react";
 
 const HomeScreen = () => {
   const { isLoading, productsData } = HomeHook();

@@ -3,27 +3,25 @@ import { useEffect, useMemo, useState } from "react";
 
 import { buttonAnimation } from "./button.animation";
 
-const SliderButton = ({ props, slideIndex, index }) => {
-  const [active, setActive] = useState(false);
-
-  const { buttonVariants } = useMemo(
-    () => buttonAnimation({ slideIndex }),
-    [buttonAnimation]
-  );
-
+const SliderButton = ({ props, slideIndex, index, scrollPosition }) => {
   useEffect(() => {
-    if (slideIndex === 0) {
-      clickHandel();
+    if (scrollPosition >= 400) {
+      return animationButton.stop;
     }
-  }, [slideIndex]);
+    // else if (scrollPosition <= 399) {
+    //   return animationButton.start({
+    //     width: "50%",
+    //     transition: {
+    //       duration: 2.5,
+    //     },
+    //   });
+    // }
+  }, [scrollPosition]);
 
-  const clickHandel = () => {
-    setActive(true);
-
-    setTimeout(() => {
-      setActive(false);
-    }, 50);
-  };
+  const { animationButton, restartAnimation } = buttonAnimation({
+    slideIndex,
+    index,
+  });
 
   return (
     <div
@@ -32,25 +30,22 @@ const SliderButton = ({ props, slideIndex, index }) => {
         backgroundColor: `${props?.background}70` ?? "#313131",
       }}
     >
-      <motion.div
-        id={`sb-background-active-${index}`}
-        className="sb-background-active"
-        variants={buttonVariants}
-        initial={"hidden"}
-        animate={
-          index < slideIndex
-            ? "fill"
-            : index > slideIndex
-            ? "hidden"
-            : active
-            ? "reset"
-            : "show"
-        }
-        onClick={clickHandel}
-        style={{
-          backgroundColor: `${props?.background}` ?? "#313131",
+      <div
+        className="sb-background-container"
+        onClick={() => {
+          restartAnimation();
+          return restartAnimation();
         }}
-      ></motion.div>
+      >
+        <motion.div
+          id={`sb-background-active-${index}`}
+          className="sb-background-active"
+          animate={animationButton}
+          style={{
+            backgroundColor: `${props?.background}` ?? "#313131",
+          }}
+        ></motion.div>
+      </div>
 
       <div className="sb-section">
         <div className="sb-image-section">
