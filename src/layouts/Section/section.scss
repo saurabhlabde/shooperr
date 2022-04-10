@@ -15,3 +15,13 @@
     }
   }
 }
+
+@media screen and(min-width: 0px) and (max-width: 1000px) {
+  .container {
+    & .main {
+      & .h-cards-section {
+        margin-top: 100px;
+      }
+    }
+  }
+}
