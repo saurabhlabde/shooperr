@@ -10,7 +10,7 @@ import { ImageSlider } from "../Slider/index";
 
 import { Alert } from "../../components/Alert/index";
 
-const Section = ({ title, component, showSlider }) => {
+const Section = ({ title, component, showSlider, showFaq }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const animation = useAnimation();
 
@@ -59,7 +59,7 @@ const Section = ({ title, component, showSlider }) => {
           <Navbar />
         </div>
 
-        {/* {showSlider && (
+        {showSlider && (
           <div className="h-image-slider-section">
             <ImageSlider scrollPosition={scrollPosition} />
           </div>
@@ -69,7 +69,7 @@ const Section = ({ title, component, showSlider }) => {
           <motion.div animate={animation} className="h-cards-section">
             {component}
           </motion.div>
-        </div> */}
+        </div>
 
         <Faq />
 
