@@ -1,4 +1,5 @@
 import { motion, useMotionValue } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useMemo, useState } from "react";
 
 import { buttonAnimation } from "./button.animation";
@@ -29,8 +30,6 @@ const SliderButton = ({ props, slideIndex, index, scrollPosition }) => {
             duration: 5,
           },
         });
-
-        console.log(buttonWidth.style.width, "buttonWidth.style.width");
       }
     }
   }, [scrollPosition]);
@@ -61,12 +60,16 @@ const SliderButton = ({ props, slideIndex, index, scrollPosition }) => {
 
       <div className="sb-section">
         <div className="sb-image-section">
-          <img
+          <Image
             className="sb-image"
+            loading="lazy"
+            height={40}
+            width={40}
             src={
               props?.image ??
               "https://images.unsplash.com/photo-1572635196237-14b3f281503f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZHVjdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
             }
+            layout="fixed"
           />
         </div>
 
