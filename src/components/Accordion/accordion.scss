@@ -1,0 +1,57 @@
+.accordion-card {
+  background-color: #fefffe;
+  //   border-bottom: solid;
+  border: solid;
+  border-color: #f9d177;
+  border-width: 2.5px;
+  width: 700px;
+  border-radius: 10px;
+  margin: 5px 0;
+  padding: 0 15px;
+
+  & :hover {
+    background-color: transparent !important;
+  }
+
+  & .accordion__button {
+    background-color: transparent;
+    height: auto;
+    padding: 15px 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    & .ac-icon-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & .ac-heading-section {
+      margin-left: 15px;
+      & .ac-heading {
+        font-size: 20px;
+        color: #000000;
+        font-family: "PlusJakartaSans-Bold";
+      }
+    }
+  }
+
+  & .accordion__panel {
+          padding: 0px 20px 20px 40px !important;
+          margin-top: -20px;
+  }
+
+  & .ac-content-section {
+    & .ac-content {
+      font-size: 15px;
+      color: #4a4242;
+      font-family: "PlusJakartaSans-SemiBold";
+    }
+  }
+
+  & .accordion__button:before {
+    display: none !important;
+  }
+}

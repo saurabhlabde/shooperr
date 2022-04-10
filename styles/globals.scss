@@ -1,5 +1,6 @@
 @use "../src/components/Logo/logo.scss";
 @use "../src/components/Button/button.scss";
+@use "../src/components/Accordion/accordion.scss";
 @use "../src/layouts/Navbar/navbar.scss";
 @use "../src/layouts/ProductCard/productCard.scss";
 @use "../src/layouts/ProductDetailsCard/productDetailsCard.scss";
@@ -10,6 +11,7 @@
 @use "../src/layouts/Slider/components/Image/image.scss";
 @use "../src/layouts/Slider/components/Button/button-s.scss";
 @use "../src/layouts/Slider/components/Line/line.scss";
+@use "../src/layouts/Faq/faq.scss";
 @use "../src/screens/Home/home.scss";
 @use "../src/screens/Details/details.scss";
 

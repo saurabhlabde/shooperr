@@ -5,6 +5,7 @@ import { useInView } from "react-intersection-observer";
 
 import { Navbar } from "../Navbar/index";
 import { Footer } from "../Footer/index";
+import { Faq } from "../Faq/index";
 import { ImageSlider } from "../Slider/index";
 
 import { Alert } from "../../components/Alert/index";
@@ -58,7 +59,7 @@ const Section = ({ title, component, showSlider }) => {
           <Navbar />
         </div>
 
-        {showSlider && (
+        {/* {showSlider && (
           <div className="h-image-slider-section">
             <ImageSlider scrollPosition={scrollPosition} />
           </div>
@@ -68,7 +69,9 @@ const Section = ({ title, component, showSlider }) => {
           <motion.div animate={animation} className="h-cards-section">
             {component}
           </motion.div>
-        </div>
+        </div> */}
+
+        <Faq />
 
         <Footer />
 
