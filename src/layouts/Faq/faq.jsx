@@ -44,7 +44,7 @@ const Faq = () => {
           </div>
 
           <div className="faq-accordion-section">
-            <Accordion allowZeroExpanded>
+            <Accordion allowZeroExpanded preExpanded={["faq-item-1"]}>
               {faqData?.map((item, index) => {
                 return (
                   <AccordionCard

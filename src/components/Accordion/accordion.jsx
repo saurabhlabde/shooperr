@@ -31,6 +31,7 @@ const AccordionCard = ({
       key={`${props.id}`}
       className={`accordion-card ${active && "accordion-card-active"} 
       ${index + 1 === activeAccordion && "accordion-card-border-disable"}`}
+      uuid={`${props.id}`}
     >
       <AccordionItemHeading>
         <AccordionItemButton>

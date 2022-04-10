@@ -59,7 +59,7 @@ const Section = ({ title, component, showSlider, showFaq }) => {
           <Navbar />
         </div>
 
-        {showSlider && (
+        {/* {showSlider && (
           <div className="h-image-slider-section">
             <ImageSlider scrollPosition={scrollPosition} />
           </div>
@@ -69,7 +69,7 @@ const Section = ({ title, component, showSlider, showFaq }) => {
           <motion.div animate={animation} className="h-cards-section">
             {component}
           </motion.div>
-        </div>
+        </div> */}
 
         {showFaq && <Faq />}
 
