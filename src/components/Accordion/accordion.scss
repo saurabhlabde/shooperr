@@ -61,3 +61,131 @@
   background-color: #fefffe !important;
   border-width: 2.5px !important;
 }
+
+.accordion-card-border-disable {
+  border-width: 0px !important;
+}
+
+@media screen and(min-width: 0px) and (max-width: 1400px) {
+  .accordion-card {
+    & .accordion__button {
+      & .ac-heading-section {
+        & .ac-heading {
+          font-size: 17px;
+          font-family: "PlusJakartaSans-Bold";
+        }
+      }
+    }
+
+    & .ac-content-section {
+      & .ac-content {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 0px) and (max-width: 1150px) {
+  .accordion-card {
+    width: 400px;
+    border-radius: 0px;
+    padding: 0 15px;
+
+    & .accordion__button {
+      padding: 15px 0;
+
+      & .ac-heading-section {
+        margin-left: 15px;
+        & .ac-heading {
+          font-size: 17px;
+          font-family: "PlusJakartaSans-Bold";
+        }
+      }
+    }
+
+    & .accordion__panel {
+      padding: 0px 20px 20px 40px !important;
+      margin-top: -20px;
+    }
+
+    & .ac-content-section {
+      & .ac-content {
+        font-size: 14px;
+      }
+    }
+
+    & .accordion__button:before {
+      display: none !important;
+    }
+  }
+}
+
+@media screen and(min-width: 0px) and (max-width: 850px) {
+  .accordion-card {
+    width: 100%;
+    border-radius: 0px;
+    padding: 0 15px;
+
+    & .accordion__button {
+      padding: 15px 0;
+
+      & .ac-heading-section {
+        margin-left: 15px;
+        & .ac-heading {
+          font-size: 17px;
+          font-family: "PlusJakartaSans-Bold";
+        }
+      }
+    }
+
+    & .accordion__panel {
+      padding: 0px 20px 20px 40px !important;
+      margin-top: -20px;
+    }
+
+    & .ac-content-section {
+      & .ac-content {
+        font-size: 14px;
+      }
+    }
+
+    & .accordion__button:before {
+      display: none !important;
+    }
+  }
+}
+
+@media screen and(min-width: 0px) and (max-width: 500px) {
+  .accordion-card {
+    width: 100%;
+    border-radius: 0px;
+    padding: 0 15px;
+
+    & .accordion__button {
+      padding: 15px 0;
+
+      & .ac-heading-section {
+        margin-left: 15px;
+        & .ac-heading {
+          font-size: 15px;
+          font-family: "PlusJakartaSans-Bold";
+        }
+      }
+    }
+
+    & .accordion__panel {
+      padding: 0px 20px 20px 40px !important;
+      margin-top: -20px;
+    }
+
+    & .ac-content-section {
+      & .ac-content {
+        font-size: 12px;
+      }
+    }
+
+    & .accordion__button:before {
+      display: none !important;
+    }
+  }
+}

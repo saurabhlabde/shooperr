@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   AccordionItem,
   AccordionItemHeading,
@@ -7,18 +7,32 @@ import {
   AccordionItemState,
 } from "react-accessible-accordion";
 
-const AccordionCard = ({ props }) => {
+const AccordionCard = ({
+  props,
+  index,
+  setActiveAccordion,
+  activeAccordion,
+}) => {
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (active) {
+      setActiveAccordion(index);
+    }
+  }, [active]);
 
   return (
     <AccordionItem
       key={`${props.id}`}
-      className={`accordion-card ${active && "accordion-card-active"}`}
+      className={`accordion-card ${active && "accordion-card-active"} 
+      ${index + 1 === activeAccordion && "accordion-card-border-disable"}`}
     >
       <AccordionItemHeading>
         <AccordionItemButton>
           <AccordionItemState>
-            {({ expanded }) => (expanded ? setActive(true) : setActive(false))}
+            {({ expanded }) => {
+              expanded ? setActive(true) : setActive(false);
+            }}
           </AccordionItemState>
 
           <div className="ac-icon-section">

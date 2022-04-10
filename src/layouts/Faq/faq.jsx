@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState } from "react";
 import { Accordion } from "react-accessible-accordion";
 
 import { faqData } from "../../data/faqData";
@@ -6,6 +7,8 @@ import { faqData } from "../../data/faqData";
 import { AccordionCard } from "../../components/Accordion/index";
 
 const Faq = () => {
+  const [activeAccordion, setActiveAccordion] = useState(0);
+
   return (
     <div className="faq-section">
       <div className="faq-l-section">
@@ -17,8 +20,16 @@ const Faq = () => {
 
         <div className="faq-accordion-section">
           <Accordion allowZeroExpanded>
-            {faqData?.map((item) => {
-              return <AccordionCard key={`${item.id}`} props={item} />;
+            {faqData?.map((item, index) => {
+              return (
+                <AccordionCard
+                  key={`${item.id}`}
+                  props={item}
+                  index={index}
+                  activeAccordion={activeAccordion}
+                  setActiveAccordion={setActiveAccordion}
+                />
+              );
             })}
           </Accordion>
         </div>
@@ -28,8 +39,8 @@ const Faq = () => {
         <div className="faq-a-image-section">
           <Image
             className="faq-a-image"
-            src={faqData[0].image}
-            loading="lazy"
+            src={faqData[activeAccordion].image}
+            loading="eager"
             height={700}
             width={500}
             layout="fixed"
