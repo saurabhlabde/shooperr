@@ -1,5 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import { Navbar } from "../Navbar/index";
 import { Footer } from "../Footer/index";
@@ -9,6 +11,9 @@ import { Alert } from "../../components/Alert/index";
 
 const Section = ({ title, component }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
+  const animation = useAnimation();
+
+  const { ref, inView } = useInView();
 
   useEffect(() => {
     function updatePosition() {
@@ -20,6 +25,25 @@ const Section = ({ title, component }) => {
 
     return () => window.removeEventListener("scroll", updatePosition);
   }, []);
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          duration: 1,
+          type: "spring",
+          bounce: 0.1,
+        },
+      });
+    }
+
+    if (!inView) {
+      animation.start({
+        x: "-100vw",
+      });
+    }
+  }, [inView]);
 
   return (
     <div className="container">
@@ -38,7 +62,11 @@ const Section = ({ title, component }) => {
           <ImageSlider scrollPosition={scrollPosition} />
         </div>
 
-        <div className="h-cards-section">{component}</div>
+        <div ref={ref}>
+          <motion.div animate={animation} className="h-cards-section">
+            {component}
+          </motion.div>
+        </div>
 
         <Footer />
 

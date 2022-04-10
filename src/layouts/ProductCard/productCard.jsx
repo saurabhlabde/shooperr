@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { Button } from "../../components/Button/index";
 
@@ -11,7 +12,7 @@ const ProductCard = ({ props }) => {
   };
 
   return (
-    <div className="product-card">
+    <motion.div className="product-card">
       <div className="pc-t-section">
         <div className="pc-media-section">
           <Image
@@ -41,7 +42,7 @@ const ProductCard = ({ props }) => {
           <Button label={"MORE DETAILS"} onClick={redirectHandel} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
