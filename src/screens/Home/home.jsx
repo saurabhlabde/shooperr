@@ -14,6 +14,7 @@ const HomeScreen = () => {
     <Section
       title={"Home"}
       showSlider={true}
+      showFaq={true}
       component={
         <div className="cards-section">
           {productsData?.map((item, i) => {

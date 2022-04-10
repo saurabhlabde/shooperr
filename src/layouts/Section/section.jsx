@@ -71,7 +71,7 @@ const Section = ({ title, component, showSlider, showFaq }) => {
           </motion.div>
         </div>
 
-        <Faq />
+        {showFaq && <Faq />}
 
         <Footer />
 
