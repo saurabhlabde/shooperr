@@ -6,6 +6,8 @@
   width: 600px;
   border-radius: 0px;
   padding: 0 15px;
+  position: relative;
+  overflow: hidden;
 
   & :hover {
     background-color: transparent !important;
@@ -52,6 +54,18 @@
   & .accordion__button:before {
     display: none !important;
   }
+
+  & .ac-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 5px;
+    background-color: #f9d177;
+    z-index: 1;
+    border-radius: 1.5px;
+    pointer-events: none;
+  }
 }
 
 .accordion-card-active {
@@ -59,7 +73,6 @@
   border-color: #f9d177 !important;
   border-radius: 10px !important;
   background-color: #fefffe !important;
-  border-width: 2.5px !important;
 }
 
 .accordion-card-border-disable {

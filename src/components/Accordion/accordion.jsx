@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import {
   AccordionItem,
   AccordionItemHeading,
@@ -7,6 +8,8 @@ import {
   AccordionItemState,
 } from "react-accessible-accordion";
 
+import { accordionAnimation } from "./accordion.animation";
+
 const AccordionCard = ({
   props,
   index,
@@ -14,6 +17,8 @@ const AccordionCard = ({
   activeAccordion,
 }) => {
   const [active, setActive] = useState(false);
+
+  const { animationAccordion } = accordionAnimation({ active });
 
   useEffect(() => {
     if (active) {
@@ -53,6 +58,12 @@ const AccordionCard = ({
           </p>
         </div>
       </AccordionItemPanel>
+      {active && (
+        <motion.div
+          animate={animationAccordion}
+          className="ac-progress-bar"
+        ></motion.div>
+      )}
     </AccordionItem>
   );
 };
