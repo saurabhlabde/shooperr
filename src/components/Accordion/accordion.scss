@@ -38,9 +38,12 @@
     }
   }
 
-  & .accordion__panel {
+  & .ac-panel {
     padding: 0px 20px 20px 40px !important;
     margin-top: -20px;
+    & .ac-image-section {
+      display: none !important;
+    }
   }
 
   & .ac-content-section {
@@ -79,7 +82,7 @@
   border-width: 0px !important;
 }
 
-@media screen and(min-width: 0px) and (max-width: 1400px) {
+@media screen and(min-width: 1150px) and (max-width: 1400px) {
   .accordion-card {
     & .accordion__button {
       & .ac-heading-section {
@@ -98,7 +101,7 @@
   }
 }
 
-@media screen and(min-width: 0px) and (max-width: 1150px) {
+@media screen and(min-width: 850px) and (max-width: 1150px) {
   .accordion-card {
     width: 400px;
     border-radius: 0px;
@@ -133,7 +136,7 @@
   }
 }
 
-@media screen and(min-width: 0px) and (max-width: 850px) {
+@media screen and(min-width: 500px) and (max-width: 850px) {
   .accordion-card {
     width: 100%;
     border-radius: 0px;
@@ -164,6 +167,20 @@
 
     & .accordion__button:before {
       display: none !important;
+    }
+
+    & .ac-panel {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding-bottom: 15px;
+      & .ac-image-section {
+        display: flex !important;
+        & .ac-image {
+          border-radius: 10px;
+          object-fit: cover;
+        }
+      }
     }
   }
 }
@@ -199,6 +216,23 @@
 
     & .accordion__button:before {
       display: none !important;
+    }
+
+    & .ac-panel {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      padding-bottom: 15px;
+      & .ac-image-section {
+        margin-left: 5px;
+        display: flex !important;
+        & .ac-image {
+          height: 30px !important;
+          width: 30px !important;
+          border-radius: 10px;
+          object-fit: cover;
+        }
+      }
     }
   }
 }

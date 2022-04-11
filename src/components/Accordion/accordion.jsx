@@ -1,5 +1,5 @@
-import { useEffect, useMemo } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   AccordionItem,
   AccordionItemHeading,
@@ -23,21 +23,21 @@ const AccordionCard = ({
     active,
   });
 
-  useEffect(() => {
-    if (index < dataLength - 1) {
-      if (index === activeIndex) {
-        setTimeout(() => {
-          return setActiveIndex(activeIndex + 1);
-        }, 5000);
-      }
-    } else {
-      if (index === activeIndex) {
-        setTimeout(() => {
-          return setActiveIndex(0);
-        }, 5000);
-      }
-    }
-  }, [activeIndex]);
+  // useEffect(() => {
+  //   if (index < dataLength - 1) {
+  //     if (index === activeIndex) {
+  //       setTimeout(() => {
+  //         return setActiveIndex(activeIndex + 1);
+  //       }, 5000);
+  //     }
+  //   } else {
+  //     if (index === activeIndex) {
+  //       setTimeout(() => {
+  //         return setActiveIndex(0);
+  //       }, 5000);
+  //     }
+  //   }
+  // }, [activeIndex]);
 
   const activeIndexHandel = (i) => {
     return setActiveIndex(i);
@@ -67,11 +67,23 @@ const AccordionCard = ({
           </div>
         </AccordionItemButton>
       </AccordionItemHeading>
-      <AccordionItemPanel>
+      <AccordionItemPanel className="ac-panel">
         <div className="ac-content-section">
           <p className="ac-content">
             <span>{props?.content}</span>
           </p>
+        </div>
+        <div className="ac-image-section">
+          <Image
+            className="ac-image"
+            src={
+              "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHNob3BwaW5nJTIwb25saW5lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            }
+            loading="eager"
+            height={70}
+            width={70}
+            layout="fixed"
+          />
         </div>
       </AccordionItemPanel>
       {active && (
