@@ -34,8 +34,6 @@ const Faq = () => {
     }
   }, [inView]);
 
-  console.log(inView, "inView");
-
   return (
     <div className="faq-container" ref={ref}>
       <motion.div className="faq-section" animate={animation}>
