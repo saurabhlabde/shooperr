@@ -13,33 +13,54 @@ import { accordionAnimation } from "./accordion.animation";
 const AccordionCard = ({
   props,
   index,
-  setActiveAccordion,
-  activeAccordion,
+  activeIndex,
+  setActiveIndex,
+  dataLength,
 }) => {
-  const [active, setActive] = useState(false);
+  const active = index === activeIndex ? true : false;
 
-  const { animationAccordion } = accordionAnimation({ active });
+  const { animationAccordion } = accordionAnimation({
+    active,
+  });
 
   useEffect(() => {
-    if (active) {
-      setActiveAccordion(index);
+    if (index < dataLength - 1) {
+      if (index === activeIndex) {
+        setTimeout(() => {
+          return setActiveIndex(activeIndex + 1);
+        }, 5000);
+      }
+    } else {
+      if (index === activeIndex) {
+        setTimeout(() => {
+          return setActiveIndex(0);
+        }, 5000);
+      }
     }
-  }, [active]);
+  }, [activeIndex]);
+
+  const activeIndexHandel = (i) => {
+    return setActiveIndex(i);
+  };
 
   return (
     <AccordionItem
       key={`${props.id}`}
       className={`accordion-card ${active && "accordion-card-active"} 
-      ${index + 1 === activeAccordion && "accordion-card-border-disable"}`}
+      ${index + 1 === activeIndex && "accordion-card-border-disable"}`}
       uuid={`${props.id}`}
+      dangerouslySetExpanded={activeIndex === index ? true : false}
+      onClick={() => {
+        activeIndexHandel(index);
+      }}
     >
       <AccordionItemHeading>
         <AccordionItemButton>
-          <AccordionItemState>
+          {/* <AccordionItemState>
             {({ expanded }) => {
-              expanded ? setActive(true) : setActive(false);
+              expanded && activeIndexHandel(index);
             }}
-          </AccordionItemState>
+          </AccordionItemState> */}
 
           <div className="ac-icon-section">
             <img className="ac-icon" src={props.icon} />

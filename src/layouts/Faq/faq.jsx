@@ -9,7 +9,8 @@ import { faqData } from "../../data/faqData";
 import { AccordionCard } from "../../components/Accordion/index";
 
 const Faq = () => {
-  const [activeAccordion, setActiveAccordion] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const animation = useAnimation();
 
   const { ref, inView } = useInView();
@@ -51,8 +52,9 @@ const Faq = () => {
                     key={`${item.id}`}
                     props={item}
                     index={index}
-                    activeAccordion={activeAccordion}
-                    setActiveAccordion={setActiveAccordion}
+                    activeIndex={activeIndex}
+                    setActiveIndex={setActiveIndex}
+                    dataLength={faqData?.length}
                   />
                 );
               })}
@@ -64,7 +66,10 @@ const Faq = () => {
           <div className="faq-a-image-section">
             <Image
               className="faq-a-image"
-              src={faqData[activeAccordion].image}
+              src={
+                faqData[activeIndex]?.image ??
+                "https://images.unsplash.com/photo-1605902711622-cfb43c4437b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fHNob3BwaW5nJTIwb25saW5lfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+              }
               loading="eager"
               height={700}
               width={500}

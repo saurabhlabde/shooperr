@@ -5,13 +5,19 @@ const accordionAnimation = ({ active }) => {
   const animationAccordion = useAnimation();
 
   useEffect(() => {
-    animationAccordion.start({
-      width: "100%",
-      transition: {
-        duration: 5,
-        ease: "easeIn",
-      },
-    });
+    animationAccordion
+      .start({
+        width: "100%",
+        transition: {
+          duration: 5,
+          ease: "easeIn",
+        },
+      })
+      .then(() => {
+        console.log("animation end...");
+        
+        animationAccordion.stop;
+      });
   }, [active]);
 
   return { animationAccordion };
