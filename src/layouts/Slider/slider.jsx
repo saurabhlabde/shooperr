@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-
 import { sliderData } from "../../data/sliderData";
 
 import { SliderImage } from "./components/Image/index";
@@ -42,9 +41,9 @@ export default class ImageSlider extends Component {
 
   render() {
     this.componentDidUpdate = () => {
-      if (this.props.scrollPosition >= 400) {
+      if (!this?.props?.inView) {
         return this.pause();
-      } else if (this.props.scrollPosition <= 399) {
+      } else {
         return this.play();
       }
     };

@@ -16,6 +16,8 @@ const Section = ({ title, component, showSlider, showFaq }) => {
 
   const { ref, inView } = useInView();
 
+  const { ref: refSlider, inView: inViewSlider } = useInView();
+
   useEffect(() => {
     function updatePosition() {
       setScrollPosition(window.scrollY);
@@ -60,8 +62,11 @@ const Section = ({ title, component, showSlider, showFaq }) => {
         </div>
 
         {showSlider && (
-          <div className="h-image-slider-section">
-            <ImageSlider scrollPosition={scrollPosition} />
+          <div className="h-image-slider-section" ref={refSlider}>
+            <ImageSlider
+              scrollPosition={scrollPosition}
+              inView={inViewSlider}
+            />
           </div>
         )}
 
