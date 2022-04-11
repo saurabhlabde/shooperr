@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import {
   AccordionItem,
   AccordionItemHeading,
   AccordionItemButton,
   AccordionItemPanel,
-  AccordionItemState,
 } from "react-accessible-accordion";
 
 import { accordionAnimation } from "./accordion.animation";
@@ -16,6 +15,7 @@ const AccordionCard = ({
   activeIndex,
   setActiveIndex,
   dataLength,
+  inView,
 }) => {
   const active = index === activeIndex ? true : false;
 
@@ -56,19 +56,13 @@ const AccordionCard = ({
     >
       <AccordionItemHeading>
         <AccordionItemButton>
-          {/* <AccordionItemState>
-            {({ expanded }) => {
-              expanded && activeIndexHandel(index);
-            }}
-          </AccordionItemState> */}
-
           <div className="ac-icon-section">
             <img className="ac-icon" src={props.icon} />
           </div>
 
           <div className="ac-heading-section">
             <h1 className="ac-heading">
-              <span>{props.title}</span>
+              <span>{props?.title}</span>
             </h1>
           </div>
         </AccordionItemButton>
@@ -76,7 +70,7 @@ const AccordionCard = ({
       <AccordionItemPanel>
         <div className="ac-content-section">
           <p className="ac-content">
-            <span>{props.content}</span>
+            <span>{props?.content}</span>
           </p>
         </div>
       </AccordionItemPanel>
@@ -84,6 +78,7 @@ const AccordionCard = ({
         <motion.div
           animate={animationAccordion}
           className="ac-progress-bar"
+          id={`${props?.id}-progress-bar`}
         ></motion.div>
       )}
     </AccordionItem>

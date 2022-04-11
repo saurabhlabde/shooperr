@@ -14,8 +14,6 @@ const accordionAnimation = ({ active }) => {
         },
       })
       .then(() => {
-        console.log("animation end...");
-        
         animationAccordion.stop;
       });
   }, [active]);
